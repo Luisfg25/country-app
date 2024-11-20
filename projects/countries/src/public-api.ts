@@ -3,4 +3,4 @@
  */
 
 export * from './lib/countries.service';
-export * from './lib/countries.component';
+export * from './lib/countries/countries.component';
