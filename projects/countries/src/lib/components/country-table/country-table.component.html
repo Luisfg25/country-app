@@ -1,0 +1,32 @@
+@if(countries().length === 0){
+<div class="alert alert-warning text-center">No countries</div>
+} @else {
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Icon</th>
+      <th>Flag</th>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Population</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (country of countries(); track country.postalCode; let id = $index) {
+    <tr>
+      <td>{{ id + 1 }}</td>
+      <td>{{ country.flag }}</td>
+      <td>
+        <img width="35" [src]="country.flags.svg" [alt]="country.name.common" />
+      </td>
+      <td>{{ country.name.common }}</td>
+      <td>{{ country.capital }}</td>
+      <td>{{ country.population | number }}</td>
+      <td><a href="#">detail</a></td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
