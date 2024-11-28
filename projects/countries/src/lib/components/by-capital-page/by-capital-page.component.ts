@@ -20,7 +20,7 @@ export class ByCapitalPageComponent {
 
   searchByCapital(capital: any) {
     this._countriesService
-      .searchByCapital(capital)
+      .searchCountries(capital, 'capital')
       .subscribe((countries) => (this.countries = countries));
   }
 }

@@ -8,8 +8,8 @@ export class CountriesService {
   private apiUrl: string = 'https://restcountries.com/v3.1';
   private _httpClient = inject(HttpClient);
 
-  searchByCapital(term: string): Observable<Country[]> {
-    const url = `${this.apiUrl}/capital/${term}`;
+  searchCountries(term: string, by: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/${by}/${term}`;
     console.log('URL', url);
     return this._httpClient.get<Country[]>(url);
   }

@@ -5,9 +5,9 @@ import { ByRegionPageComponent } from './components/by-region-page/by-region-pag
 import { CountryPageComponent } from './components/country-page/country-page.component';
 
 export const COUNTRIES_ROUTES: Routes = [
+  { path: 'by/:id', component: CountryPageComponent },
   { path: 'by-capital', component: ByCapitalPageComponent },
   { path: 'by-country', component: ByCountryPageComponent },
   { path: 'by-region', component: ByRegionPageComponent },
-  { path: 'by:id', component: CountryPageComponent },
-  { path: '**', redirectTo: 'by-capital' },
+  // { path: '**', redirectTo: 'by-capital' },
 ];

@@ -1,1 +1,52 @@
-<p>country-page works!</p>
+@if(country){
+<div>
+  <div class="row">
+    <div class="col-12">
+      test
+      <h2>Pais {{ country.name.common }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <h3>Flag</h3>
+    <img
+      [src]="country.flags.svg"
+      [alt]="country.name.common"
+      class="img-thumbnail"
+    />
+  </div>
+  <div class="col">
+    <h3>Info</h3>
+    <ul class="list-group">
+      <li class="lsit-group-item">
+        <strong>Population:</strong> {{ country.population | number }}
+      </li>
+      <li class="lsit-group-item"><strong>Cod:</strong> {{ country.cca3 }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col">
+    <h3>Translations:</h3>
+    <div class="d-flex-flex-wrap">
+      <span class="badge bg-primary m-1">{{
+        country.translations["ara"].common
+      }}</span>
+      <span class="badge bg-primary m-1">{{
+        country.translations["kor"].common
+      }}</span>
+      <span class="badge bg-primary m-1">{{
+        country.translations["per"].common
+      }}</span>
+      <span class="badge bg-primary m-1">{{
+        country.translations["spa"].common
+      }}</span>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="alert alert-info">Please wait..</div>
+}
