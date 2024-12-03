@@ -10,6 +10,9 @@
   </div>
 </div>
 
+@if(isLoading){
+<shared-loading-spinner />}
+
 <div class="row">
   <div class="col">
     <countries-country-table [countries]="countries" />
