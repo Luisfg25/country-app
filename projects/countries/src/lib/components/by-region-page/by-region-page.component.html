@@ -2,19 +2,26 @@
 <hr />
 <br />
 <div class="row">
-  <div class="col">
-    <shared-search-box
-      (onValue)="searchByCapital($event)"
-      [placeHolder]="'search by region'"
-    />
+  <div class="col text-center">
+    @for(region of regions; track region) {
+    <button
+      class="btn mx-2"
+      [ngClass]="{
+        'btn-outline-primary': selectedRegion === region
+      }"
+      (click)="searchByRegion(region)"
+    >
+      {{ region }}
+    </button>
+    }
   </div>
+
+  @if(isLoading){
+  <shared-loading-spinner />}
 </div>
-
-@if(isLoading){
-<shared-loading-spinner />}
-
 <div class="row">
   <div class="col">
+    <hr />
     <countries-country-table [countries]="countries" />
   </div>
 </div>
